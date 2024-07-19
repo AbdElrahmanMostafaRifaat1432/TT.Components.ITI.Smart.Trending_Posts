@@ -6,7 +6,7 @@ ADD requirements.txt requirements.txt
 
 # Increase the timeout value for pip and install the packages
 RUN pip install --upgrade pip \
-    && pip config set global.timeout 1200 \
+    && pip config set global.timeout 7000 \
     && pip install -r requirements.txt
 
 # Set the working directory in the container
