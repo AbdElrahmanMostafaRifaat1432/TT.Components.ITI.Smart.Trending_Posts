@@ -2,14 +2,14 @@ FROM python:3.11.7
 EXPOSE 8080
 
 # Copy the requirements file into the container
-ADD packages.txt packages.txt
+#ADD packages.txt packages.txt
 ADD requirements.txt requirements.txt
 
 # Increase the timeout value for pip and install the packages
 RUN pip install --upgrade pip \
     && pip config set global.timeout 20000 \
-    && pip install -r requirements.txt \
-    && pip install -r packages.txt
+    && pip install -r requirements.txt 
+#    && pip install -r packages.txt
 
 # Set the working directory in the container
 WORKDIR /app3
